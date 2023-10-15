@@ -9,5 +9,5 @@ Branch Tesztelés
 
 GitHub Desktop test :D
 
-Designolás
-Felület finomítása
+Designolás teszt
+Felület finomítása teszt
