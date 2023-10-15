@@ -8,3 +8,6 @@ Helló itt vagyok én is
 Branch Tesztelés
 
 GitHub Desktop test :D
+
+Designolás
+Felület finomítása
