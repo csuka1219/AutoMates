@@ -10,9 +10,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2X9viI7nzMLfpqoMrRq3EAxJSf1" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -25,7 +25,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Egyetem/MISZ/AutoMates/AutoMates/AutoMates/src/main/resources/com/automates/automates",
+    "last_opened_file_path": "D:/Egyetem/MISZ/AutoMates/AutoMates/AutoMates/src/main/java/com/automates/automates",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -35,7 +35,12 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Egyetem\MISZ\AutoMates\AutoMates\AutoMates\src\main\java\com\automates\automates" />
+      <recent name="D:\Egyetem\MISZ\AutoMates\AutoMates\AutoMates\src\main\java\com\automates\automates\Model" />
       <recent name="D:\Egyetem\MISZ\AutoMates\AutoMates\AutoMates\src\main\resources\com\automates\automates" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Egyetem\MISZ\AutoMates\AutoMates\AutoMates\src\main\resources\META-INF" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -46,7 +51,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1698054237191</updated>
-      <workItem from="1698054238250" duration="456000" />
+      <workItem from="1698054238250" duration="4520000" />
+      <workItem from="1698089639285" duration="3736000" />
     </task>
     <servers />
   </component>
