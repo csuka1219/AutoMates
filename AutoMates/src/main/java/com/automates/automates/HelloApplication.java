@@ -1,4 +1,5 @@
 package com.automates.automates;
+import com.automates.automates.Data.UserData;
 import com.automates.automates.Model.User;
 import com.automates.automates.interfaces.UserDAO;
 import com.automates.automates.repositories.JpaUserDAO;
@@ -20,8 +21,8 @@ public class HelloApplication extends Application {
         //Ez csak egy példa hogy hogy lehet használni.
         try (UserDAO uDAO = new JpaUserDAO();) {
             User user = new User();
-            user.setUsername("asd");
-            user.setPassword("qwe");
+            user.setUsername("iuewrhfuisdf");
+            user.setPassword("ofjdgjoidg");
             user.setProvider(false);
             boolean a = uDAO.Register(user);
             boolean d = uDAO.IsUsernameAlreadyExist(user.getUsername());
@@ -33,9 +34,14 @@ public class HelloApplication extends Application {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        //autoim felület tesztelés
+        UserData.setId(1);
+        UserData.setName("SzolgáltatóTest");
+
         //javafx felület
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("mycars-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();

@@ -10,6 +10,14 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -25,11 +33,14 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Egyetem/MISZ/AutoMates/AutoMates/AutoMates/src/main/java/com/automates/automates",
+    "last_opened_file_path": "D:/Egyetem/MISZ/AutoMates/AutoMates/AutoMates",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.28045976",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -40,7 +51,12 @@
       <recent name="D:\Egyetem\MISZ\AutoMates\AutoMates\AutoMates\src\main\resources\com\automates\automates" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Egyetem\MISZ\AutoMates\AutoMates\AutoMates\src\main\resources" />
+      <recent name="D:\Egyetem\MISZ\AutoMates\AutoMates\AutoMates\src\main\resources\images" />
       <recent name="D:\Egyetem\MISZ\AutoMates\AutoMates\AutoMates\src\main\resources\META-INF" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.automates.automates" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -53,6 +69,9 @@
       <updated>1698054237191</updated>
       <workItem from="1698054238250" duration="4520000" />
       <workItem from="1698089639285" duration="3736000" />
+      <workItem from="1698132671962" duration="337000" />
+      <workItem from="1698170853674" duration="753000" />
+      <workItem from="1698835477740" duration="3310000" />
     </task>
     <servers />
   </component>
