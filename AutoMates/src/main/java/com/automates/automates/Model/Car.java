@@ -78,6 +78,18 @@ public class Car implements Serializable {
         return PricePerDay;
     }
 
+    public Car(User provider, String brand, String model, String licensePlate, String color, int seats, boolean isDiesel, double pricePerDay) {
+        this.provider = provider;
+        Brand = brand;
+        Model = model;
+        LicensePlate = licensePlate;
+        Color = color;
+        Seats = seats;
+        IsDiesel = isDiesel;
+        PricePerDay = pricePerDay;
+    }
+    public Car (){}
+
     public void setPricePerDay(double pricePerDay) {
         PricePerDay = pricePerDay;
     }

@@ -24,7 +24,7 @@ public class HelloApplication extends Application {
             user.setUsername("iuewrhfuisdf");
             user.setPassword("ofjdgjoidg");
             user.setProvider(false);
-            boolean a = uDAO.Register(user);
+            //boolean a = uDAO.Register(user);
             boolean d = uDAO.IsUsernameAlreadyExist(user.getUsername());
             boolean e = uDAO.IsUsernameAlreadyExist("abc");
             boolean b = uDAO.Login(user);

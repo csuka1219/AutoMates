@@ -1,15 +1,17 @@
 package com.automates.automates;
+import com.automates.automates.Component.NumberTextField;
+import com.automates.automates.Data.UserData;
 import com.automates.automates.Model.Car;
+import com.automates.automates.Model.User;
+import com.automates.automates.interfaces.CarDAO;
+import com.automates.automates.interfaces.UserDAO;
+import com.automates.automates.repositories.JpaCarDAO;
+import com.automates.automates.repositories.JpaUserDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TableColumn;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.ImageView;
-import javafx.scene.text.Text;
-import javafx.scene.layout.AnchorPane;
-
+import javafx.scene.layout.VBox;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -39,15 +41,6 @@ public class MyCarController implements Initializable {
     @FXML
     private Button editCarButton;
 
-    @FXML
-    private AnchorPane sideMenuPane;
-
-    @FXML
-    private ImageView logoImageView;
-
-    @FXML
-    private Text welcomeText;
-
 
 
     @Override
@@ -57,13 +50,126 @@ public class MyCarController implements Initializable {
 
         configureTableColumns();
 
-        Car car = new Car();
-        car.setBrand("asd");
-        car.setLicensePlate("asd");
-        tableView.getItems().add(car);
-        tableView.getItems().add(car);
+        //Táblázat feltöltése
+        try (CarDAO cDAO = new JpaCarDAO();) {
+            tableView.getItems().addAll(cDAO.getCars());
+        } catch (Exception e) {
+            System.out.println("Hiba a táblázat feltöltése keygen");
+        }
     }
 
+    private void showAddRecordDialog(boolean editMode, Car editCar) {
+        TextField brandField = new TextField();
+        TextField modelField = new TextField();
+        TextField licensePlateField = new TextField();
+        TextField colorField = new TextField();
+        NumberTextField seatsField = new NumberTextField();
+        NumberTextField priceField = new NumberTextField();
+        CheckBox isDieselCheckBox = new CheckBox();
+
+        //ha szerkesztő módban vagyunk akkor beállítjuk a textboxok értékeit
+        if(editMode){
+            brandField.setText(editCar.getBrand());
+            modelField.setText(editCar.getModel());
+            licensePlateField.setText(editCar.getLicensePlate());
+            colorField.setText(editCar.getColor());
+            seatsField.setText(Integer.toString(editCar.getSeats()));
+            priceField.setText(Double.toString(editCar.getPricePerDay()));
+            isDieselCheckBox.setSelected(editCar.isDiesel());
+        }
+
+
+        Dialog<ButtonType> dialog = new Dialog<>();
+        dialog.setTitle("Új autó");
+        dialog.setHeaderText("Adja meg az autó adatait");
+
+        // Create the dialog pane
+        DialogPane dialogPane = dialog.getDialogPane();
+        dialogPane.getButtonTypes().addAll(ButtonType.OK, ButtonType.CANCEL);
+
+        // Create content for the dialog
+        VBox content = new VBox(10);
+        content.getChildren().addAll(
+                new Label("Brand:"),
+                brandField,
+                new Label("Model:"),
+                modelField,
+                new Label("License plate:"),
+                licensePlateField,
+                new Label("Color:"),
+                colorField,
+                new Label("Seats:"),
+                        seatsField,
+                new Label("Price per day:"),
+                priceField,
+                new Label("Is diesel:"),
+                isDieselCheckBox
+        );
+        dialogPane.setContent(content);
+
+        dialog.setResultConverter(buttonType -> {
+            if (buttonType == ButtonType.OK) {
+                //kiszedjük a textboxok-ból a szöveget
+                String brand = brandField.getText();
+                String model = modelField.getText();
+                String licensePlate = licensePlateField.getText();
+                String color = colorField.getText();
+                int seats = Integer.parseInt(seatsField.getText());
+                Double price = Double.parseDouble(priceField.getText());
+                boolean isDiesel = isDieselCheckBox.isSelected();
+
+                //szerkesztő mód
+                if(editMode){
+                    try (CarDAO cDAO = new JpaCarDAO()) {
+                        //Attacholjuk az ojjektumot, ez fog az adatbázisba kerülni
+                        Car existingCar = cDAO.GetCarById(editCar.getId());
+                        existingCar.setBrand(brand);
+                        existingCar.setModel(model);
+                        existingCar.setLicensePlate(licensePlate);
+                        existingCar.setColor(color);
+                        existingCar.setSeats(seats);
+                        existingCar.setPricePerDay(price);
+                        existingCar.setDiesel(isDiesel);
+
+                        //Ez pedig a táblázatot frissíti
+                        editCar.setBrand(brand);
+                        editCar.setModel(model);
+                        editCar.setLicensePlate(licensePlate);
+                        editCar.setColor(color);
+                        editCar.setSeats(seats);
+                        editCar.setPricePerDay(price);
+                        editCar.setDiesel(isDiesel);
+                        tableView.refresh();
+
+                        cDAO.updateCar(existingCar);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+                //Új autó felvétele
+                else{
+                    User user;
+                    try (UserDAO uDAO = new JpaUserDAO()) {
+                        user = uDAO.GetUserById(UserData.getId());
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        return null;
+                    }
+                    try (CarDAO cDAO = new JpaCarDAO()) {
+                        Car newCar = new Car(user, brand, model, licensePlate, color, seats, isDiesel, price);
+                        cDAO.saveCar(newCar);
+                        tableView.getItems().add(newCar);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            return null;
+        });
+
+        // Show the dialog and wait for user input
+        dialog.showAndWait();
+    }
     private void configureTableColumns(){
         brandColumn.setCellValueFactory(new PropertyValueFactory<Car,String>("Brand"));
         licensePlateColumn.setCellValueFactory(new PropertyValueFactory<Car,String>("LicensePlate"));
@@ -73,10 +179,13 @@ public class MyCarController implements Initializable {
     }
 
     private void handleNewCarButton() {
-
+        showAddRecordDialog(false, null);
     }
 
     private void handleEditCarButton() {
-
+        Car editCar = tableView.getSelectionModel().getSelectedItem();
+        if(editCar != null){
+            showAddRecordDialog(true, editCar);
+        }
     }
 }

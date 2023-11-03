@@ -22,6 +22,14 @@ public class JpaUserDAO implements UserDAO {
         }
     }
 
+    public User GetUserById(int id) {
+        try {
+            return entityManager.find(User.class, id);
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
     @Override
     public boolean Login(User user) {
         TypedQuery<User> currentUser = entityManager.createQuery(
