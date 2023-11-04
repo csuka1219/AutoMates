@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <fx:include source="sidabar-view.fxml" fx:id="menubar" />
+        <AnchorPane layoutX="168.0" layoutY="24.0" prefHeight="76.0" prefWidth="115.0" style="-fx-background-color: gray;">
+            <children>
+                <ImageView fitHeight="34.0" fitWidth="37.0" layoutX="8.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@/car-xxl.png" />
+                    </image>
+                </ImageView>
+                <Text fill="WHITE" layoutX="95.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                    <font>
+                        <Font size="19.0" />
+                    </font>
+                </Text>
+                <Text fill="WHITE" layoutX="23.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Autóim száma" />
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="309.0" layoutY="24.0" prefHeight="76.0" prefWidth="115.0" style="-fx-background-color: gray;">
+            <children>
+                <ImageView fitHeight="34.0" fitWidth="37.0" layoutX="8.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@/banknotes-xxl.png" />
+                    </image>
+                </ImageView>
+                <Text fill="WHITE" layoutX="38.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1000" textAlignment="RIGHT" wrappingWidth="73.80615234375">
+                    <font>
+                        <Font size="19.0" />
+                    </font>
+                </Text>
+                <Text fill="WHITE" layoutX="6.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Összes bevételem $" />
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="448.0" layoutY="24.0" prefHeight="76.0" prefWidth="115.0" style="-fx-background-color: gray;">
+            <children>
+                <ImageView fitHeight="34.0" fitWidth="37.0" layoutX="8.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@/conference-xxl.png" />
+                    </image>
+                </ImageView>
+                <Text fill="WHITE" layoutX="89.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="11">
+                    <font>
+                        <Font size="19.0" />
+                    </font>
+                </Text>
+                <Text fill="WHITE" layoutX="14.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vásárlók száma" />
+            </children>
+        </AnchorPane>
+        <BarChart layoutX="168.0" layoutY="139.0" prefHeight="241.0" prefWidth="408.0" title="Napi Bevétel">
+            <xAxis>
+                <CategoryAxis label="Napok" side="BOTTOM" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="Bevétel" side="LEFT" />
+            </yAxis>
+        </BarChart>
+    </children>
+</Pane>
