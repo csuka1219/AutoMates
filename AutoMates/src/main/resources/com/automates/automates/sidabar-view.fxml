@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.shape.Line?>
+<AnchorPane prefHeight="400.0" prefWidth="147.0" style="-fx-background-color: rgb(128,128,128);"
+            fx:controller="com.automates.automates.SideBarController" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <ImageView fitHeight="76.0" fitWidth="95.0" layoutX="38.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@/AvatarImg.png" />
+            </image>
+        </ImageView>
+        <Text fill="WHITE" layoutX="35.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Üdvözöllek,">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Text>
+        <Text fx:id="usernameText" fill="WHITE" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="" textAlignment="CENTER" wrappingWidth="148.0">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Text>
+        <Line endX="31.20001220703125" endY="-1.52587890625E-5" layoutX="92.0" layoutY="173.0" startX="-65.30000305175781" startY="-1.52587890625E-5" stroke="WHITE" />
+        <Text fill="WHITE" layoutX="49.0" layoutY="206.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Autóim">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Text>
+        <Text fill="WHITE" layoutX="38.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Statisztikák">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Text>
+        <Text fill="WHITE" layoutX="33.0" layoutY="381.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kijelentkezés">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Text>
+    </children>
+</AnchorPane>

@@ -1,6 +1,7 @@
 package com.automates.automates.repositories;
 
 import com.automates.automates.Model.Car;
+import com.automates.automates.Model.User;
 import com.automates.automates.interfaces.CarDAO;
 
 import javax.persistence.EntityManager;
@@ -36,6 +37,15 @@ public class JpaCarDAO implements CarDAO {
         TypedQuery<Car> query = entityManager.createQuery(
                 "SELECT a FROM Car a", Car.class);
         return query.getResultList();
+    }
+
+    @Override
+    public Car GetCarById(int id) {
+        try {
+            return entityManager.find(Car.class, id);
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     @Override
