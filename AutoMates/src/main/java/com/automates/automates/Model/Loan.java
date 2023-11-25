@@ -17,6 +17,22 @@ public class Loan {
     private java.util.Date StartDate;
     private java.util.Date EndDate;
 
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        this.car = car;
+    }
+
+    public User getRenter() {
+        return renter;
+    }
+
+    public void setRenter(User renter) {
+        this.renter = renter;
+    }
+
     public int getId() {
         return id;
     }
