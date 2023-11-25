@@ -30,20 +30,9 @@
             </font>
         </Text>
         <Line endX="31.20001220703125" endY="-1.52587890625E-5" layoutX="92.0" layoutY="173.0" startX="-65.30000305175781" startY="-1.52587890625E-5" stroke="WHITE" />
-        <Text fill="WHITE" layoutX="49.0" layoutY="206.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Autóim">
-            <font>
-                <Font size="15.0" />
-            </font>
-        </Text>
-        <Text fill="WHITE" layoutX="38.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Statisztikák">
-            <font>
-                <Font size="15.0" />
-            </font>
-        </Text>
-        <Text fill="WHITE" layoutX="33.0" layoutY="381.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kijelentkezés">
-            <font>
-                <Font size="15.0" />
-            </font>
-        </Text>
+        <Button fx:id="button1" layoutX="38.0" textFill="white" style="-fx-background-color: transparent; -fx-font-size:15" layoutY="185.0" mnemonicParsing="false" text="Autóim" />
+        <Button fx:id="button2" layoutX="28.0" textFill="white" style="-fx-background-color: transparent; -fx-font-size:15" layoutY="220.0" mnemonicParsing="false" text="Statisztikák" />
+        <Button fx:id="logoutButton" layoutX="24.0" textFill="white" style="-fx-background-color: transparent; -fx-font-size:15" layoutY="360.0" mnemonicParsing="false" text="Kijelentkezés" />
+
     </children>
 </AnchorPane>
