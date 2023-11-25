@@ -1,12 +1,13 @@
 package com.automates.automates.repositories;
-import com.automates.automates.Model.Car;
 import com.automates.automates.Model.Loan;
 import com.automates.automates.interfaces.LoanDAO;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Date;
 
 public class JpaLoanDAO implements LoanDAO {
     private final EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("br.com.fredericci.pu");
@@ -57,7 +58,6 @@ public class JpaLoanDAO implements LoanDAO {
                 "SELECT l FROM Loan l JOIN Car c ON c.id = l.car.id WHERE c.provider.id = :userId", Loan.class);
         query.setParameter("userId", userId);
         List<Loan> l = query.getResultList();
-        LocalDateTime timeNow = LocalDateTime.now();
         int myProceed = 0;
         for (Loan loan : l) {
             String date1 = String.valueOf(loan.getStartDate()).substring(0, 22);
@@ -81,7 +81,22 @@ public class JpaLoanDAO implements LoanDAO {
         return myProceed;
     }
 
-    public static long calculateDateDifference(String dateString1, String dateString2, String dateStringP) throws Exception {
+    @Override
+    public int getMyProceedPerDay(int userId, int daysBefore) {
+        LocalDateTime dateString1 = LocalDateTime.now().minusDays(daysBefore);
+        Date theDay = Date.from(dateString1.atZone(ZoneId.systemDefault()).toInstant());
+
+        Query query = entityManager.createQuery(
+                "SELECT SUM(c.PricePerDay) FROM Loan l JOIN Car c ON l.car.id = c.id WHERE c.provider.id = :userId " +
+                        "AND :theDay BETWEEN l.StartDate AND l.EndDate",
+                   Double.class);
+
+        query.setParameter("userId", userId);
+        query.setParameter("theDay",theDay);
+        return ((Number) query.getSingleResult()).intValue();
+    }
+
+    public static long calculateDateDifference(String dateString1, String dateString2, String dateStringP)  {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SS");
 
         LocalDateTime dateTime1 = LocalDateTime.parse(dateString1, formatter);
