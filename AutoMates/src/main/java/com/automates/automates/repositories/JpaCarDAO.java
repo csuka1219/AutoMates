@@ -4,15 +4,13 @@ import com.automates.automates.Model.Car;
 import com.automates.automates.Model.User;
 import com.automates.automates.interfaces.CarDAO;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.TypedQuery;
+import javax.persistence.*;
 import java.util.List;
 
 public class JpaCarDAO implements CarDAO {
     private final EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("br.com.fredericci.pu");
     private final EntityManager entityManager = entityManagerFactory.createEntityManager();
+
     @Override
     public void saveCar(Car car) {
         entityManager.getTransaction().begin();
@@ -47,6 +45,20 @@ public class JpaCarDAO implements CarDAO {
             return null;
         }
     }
+
+    @Override
+    public int getNumberOfCarsForUser(int userId) {
+        try {
+            Query query = entityManager.createQuery(
+                    "SELECT COUNT(c) FROM Car c WHERE c.provider.id = :userId", Long.class);
+            query.setParameter("userId", userId);
+            return ((Number) query.getSingleResult()).intValue();
+
+        } catch (Exception e) {
+            return 0;
+        }
+    }
+
 
     @Override
     public void close() throws Exception {
