@@ -40,8 +40,9 @@ public class HelloApplication extends Application {
         UserData.setName("SzolgáltatóTest");
 
         //javafx felület
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("mycars-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("statisztikak.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        stage.setResizable(false);
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();

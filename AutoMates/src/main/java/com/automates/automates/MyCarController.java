@@ -54,7 +54,7 @@ public class MyCarController implements Initializable {
         try (CarDAO cDAO = new JpaCarDAO();) {
             tableView.getItems().addAll(cDAO.getCars());
         } catch (Exception e) {
-            System.out.println("Hiba a táblázat feltöltése keygen");
+            System.out.println("Hiba a táblázat feltöltése közben.");
         }
     }
 
@@ -121,7 +121,7 @@ public class MyCarController implements Initializable {
                 //szerkesztő mód
                 if(editMode){
                     try (CarDAO cDAO = new JpaCarDAO()) {
-                        //Attacholjuk az ojjektumot, ez fog az adatbázisba kerülni
+                        //Attacholjuk az objektumot, ez fog az adatbázisba kerülni
                         Car existingCar = cDAO.GetCarById(editCar.getId());
                         existingCar.setBrand(brand);
                         existingCar.setModel(model);

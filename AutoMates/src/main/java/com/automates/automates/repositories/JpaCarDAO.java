@@ -5,10 +5,7 @@ import com.automates.automates.Model.Loan;
 import com.automates.automates.Model.User;
 import com.automates.automates.interfaces.CarDAO;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.TypedQuery;
+import javax.persistence.*;
 import java.util.List;
 
 public class JpaCarDAO implements CarDAO {
@@ -45,6 +42,19 @@ public class JpaCarDAO implements CarDAO {
                 "SELECT a FROM Car a LEFT JOIN Loan o ON a.id = o.car.id WHERE o.EndDate<current_date " +
                         "or a.id not in (select car.id from Loan)", Car.class);
         return query.getResultList();
+    }
+
+    @Override
+    public int getNumberOfCarsForUser(int userId) {
+        try {
+            Query query = entityManager.createQuery(
+                    "SELECT COUNT(c) FROM Car c WHERE c.provider.id = :userId", Long.class);
+            query.setParameter("userId", userId);
+            return ((Number) query.getSingleResult()).intValue();
+
+        } catch (Exception e) {
+            return 0;
+        }
     }
 
     @Override
