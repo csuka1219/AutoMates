@@ -1,6 +1,7 @@
 package com.automates.automates.repositories;
 
 import com.automates.automates.Model.Car;
+import com.automates.automates.Model.Loan;
 import com.automates.automates.Model.User;
 import com.automates.automates.interfaces.CarDAO;
 
@@ -36,6 +37,13 @@ public class JpaCarDAO implements CarDAO {
     public List<Car> getCars() {
         TypedQuery<Car> query = entityManager.createQuery(
                 "SELECT a FROM Car a", Car.class);
+        return query.getResultList();
+    }
+    @Override
+    public List<Car> getAvailableCars() {
+        TypedQuery<Car> query = entityManager.createQuery(
+                "SELECT a FROM Car a LEFT JOIN Loan o ON a.id = o.car.id WHERE o.EndDate<current_date " +
+                        "or a.id not in (select car.id from Loan)", Car.class);
         return query.getResultList();
     }
 
