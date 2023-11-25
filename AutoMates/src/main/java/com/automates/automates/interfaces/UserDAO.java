@@ -8,4 +8,5 @@ public interface UserDAO extends AutoCloseable {
     public boolean IsUsernameAlreadyExist(String username);
     public User GetUserById(int id);
     public int getMyClients(int userId);
+
 }

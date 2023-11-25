@@ -11,5 +11,6 @@ public interface LoanDAO extends AutoCloseable{
     public List<Loan> getLoans(); //R
     public List<Loan> getRentedCars(int renterId);
     public int getMyAllProceed(int userId);
+    public int getMyProceedPerDay(int userId, int daysBefore);
 
 }
