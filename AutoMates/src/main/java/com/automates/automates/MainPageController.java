@@ -33,6 +33,8 @@ public class MainPageController implements Initializable {
     @FXML
     private CheckBox isDiesel;
     @FXML
+    private CheckBox isElectricalOrHybrid;
+    @FXML
     private TableView<Car> tableView;
     @FXML
     private TableColumn<Car, String> ownerColumn;
@@ -103,6 +105,7 @@ public class MainPageController implements Initializable {
                                 && (Model.getValue() == null || Model.getValue().isEmpty() || car.getModel().equals(Model.getValue()))
                                 && (Color.getValue() == null || Color.getValue().isEmpty() || car.getColor().equals(Color.getValue()))
                                 && car.isDiesel() == isDiesel.isSelected()
+                                && car.isElectricalOrHybrid() == isElectricalOrHybrid.isSelected()
                                 && (seatsField.getText() == null || seatsField.getText().isEmpty() || car.getSeats() == Integer.parseInt(seatsField.getText())))
                 .toList();
         tableView.getItems().clear();

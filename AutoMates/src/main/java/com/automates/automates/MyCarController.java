@@ -66,6 +66,7 @@ public class MyCarController implements Initializable {
         NumberTextField seatsField = new NumberTextField();
         NumberTextField priceField = new NumberTextField();
         CheckBox isDieselCheckBox = new CheckBox();
+        CheckBox isElectricalOrHybridCheckBox = new CheckBox();
 
         //ha szerkesztő módban vagyunk akkor beállítjuk a textboxok értékeit
         if(editMode){
@@ -76,6 +77,7 @@ public class MyCarController implements Initializable {
             seatsField.setText(Integer.toString(editCar.getSeats()));
             priceField.setText(Double.toString(editCar.getPricePerDay()));
             isDieselCheckBox.setSelected(editCar.isDiesel());
+            isElectricalOrHybridCheckBox.setSelected(editCar.isElectricalOrHybrid());
         }
 
 
@@ -90,20 +92,22 @@ public class MyCarController implements Initializable {
         // Create content for the dialog
         VBox content = new VBox(10);
         content.getChildren().addAll(
-                new Label("Brand:"),
+                new Label("Márka:"),
                 brandField,
                 new Label("Model:"),
                 modelField,
-                new Label("License plate:"),
+                new Label("Rendszám:"),
                 licensePlateField,
-                new Label("Color:"),
+                new Label("Szín:"),
                 colorField,
-                new Label("Seats:"),
+                new Label("Ülések:"),
                         seatsField,
-                new Label("Price per day:"),
+                new Label("Bérlés ára (ft/nap):"),
                 priceField,
-                new Label("Is diesel:"),
-                isDieselCheckBox
+                new Label("Diesel:"),
+                isDieselCheckBox,
+                new Label("Elektromos/Hybrid:"),
+                isElectricalOrHybridCheckBox
         );
         dialogPane.setContent(content);
 
@@ -117,6 +121,7 @@ public class MyCarController implements Initializable {
                 int seats = Integer.parseInt(seatsField.getText());
                 Double price = Double.parseDouble(priceField.getText());
                 boolean isDiesel = isDieselCheckBox.isSelected();
+                boolean isElectricalOrHybrid = isElectricalOrHybridCheckBox.isSelected();
 
                 //szerkesztő mód
                 if(editMode){
@@ -130,6 +135,7 @@ public class MyCarController implements Initializable {
                         existingCar.setSeats(seats);
                         existingCar.setPricePerDay(price);
                         existingCar.setDiesel(isDiesel);
+                        existingCar.setElectricalOrHybrid(isElectricalOrHybrid);
 
                         //Ez pedig a táblázatot frissíti
                         editCar.setBrand(brand);
@@ -139,6 +145,7 @@ public class MyCarController implements Initializable {
                         editCar.setSeats(seats);
                         editCar.setPricePerDay(price);
                         editCar.setDiesel(isDiesel);
+                        editCar.setElectricalOrHybrid(isElectricalOrHybrid);
                         tableView.refresh();
 
                         cDAO.updateCar(existingCar);
@@ -156,7 +163,7 @@ public class MyCarController implements Initializable {
                         return null;
                     }
                     try (CarDAO cDAO = new JpaCarDAO()) {
-                        Car newCar = new Car(user, brand, model, licensePlate, color, seats, isDiesel, price);
+                        Car newCar = new Car(user, brand, model, licensePlate, color, seats, isDiesel, isElectricalOrHybrid, price);
                         cDAO.saveCar(newCar);
                         tableView.getItems().add(newCar);
                     } catch (Exception e) {

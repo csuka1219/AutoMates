@@ -80,8 +80,15 @@ public class Car implements Serializable {
     public double getPricePerDay() {
         return PricePerDay;
     }
+    public boolean isElectricalOrHybrid() {
+        return IsElectricalOrHybrid;
+    }
 
-    public Car(User provider, String brand, String model, String licensePlate, String color, int seats, boolean isDiesel, double pricePerDay) {
+    public void setElectricalOrHybrid(boolean electricalOrHybrid) {
+        IsElectricalOrHybrid = electricalOrHybrid;
+    }
+
+    public Car(User provider, String brand, String model, String licensePlate, String color, int seats, boolean isDiesel,boolean isElectricalOrHybrid, double pricePerDay) {
         this.provider = provider;
         Brand = brand;
         Model = model;
@@ -90,6 +97,7 @@ public class Car implements Serializable {
         Seats = seats;
         IsDiesel = isDiesel;
         PricePerDay = pricePerDay;
+        IsElectricalOrHybrid = isElectricalOrHybrid;
     }
     public Car (){}
 
@@ -107,5 +115,6 @@ public class Car implements Serializable {
     private String Color;
     private int Seats;
     private boolean IsDiesel;
+    private boolean IsElectricalOrHybrid;
     private double PricePerDay;
 }
