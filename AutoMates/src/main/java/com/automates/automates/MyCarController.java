@@ -52,7 +52,7 @@ public class MyCarController implements Initializable {
 
         //Táblázat feltöltése
         try (CarDAO cDAO = new JpaCarDAO();) {
-            tableView.getItems().addAll(cDAO.getCars());
+            tableView.getItems().addAll(cDAO.getCarsByProviderId(UserData.getId()));
         } catch (Exception e) {
             System.out.println("Hiba a táblázat feltöltése közben.");
         }

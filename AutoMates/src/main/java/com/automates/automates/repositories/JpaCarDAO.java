@@ -37,6 +37,15 @@ public class JpaCarDAO implements CarDAO {
                 "SELECT a FROM Car a", Car.class);
         return query.getResultList();
     }
+
+    @Override
+    public List<Car> getCarsByProviderId(int providerId) {
+        TypedQuery<Car> query = entityManager.createQuery(
+                "SELECT a FROM Car a WHERE a.provider.id = :providerId", Car.class);
+        query.setParameter("providerId", providerId);
+        return query.getResultList();
+    }
+
     @Override
     public List<Car> getAvailableCars() {
         TypedQuery<Car> query = entityManager.createQuery(
