@@ -1,5 +1,5 @@
 package com.automates.automates;
-import com.automates.automates.Component.NumberTextField;
+import com.automates.automates.component.NumberTextField;
 import com.automates.automates.Data.UserData;
 import com.automates.automates.Model.Car;
 import com.automates.automates.Model.User;
