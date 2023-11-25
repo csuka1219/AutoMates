@@ -2,10 +2,11 @@ package com.automates.automates.repositories;
 
 import com.automates.automates.Model.Car;
 import com.automates.automates.Model.Loan;
-import com.automates.automates.Model.User;
 import com.automates.automates.interfaces.CarDAO;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class JpaCarDAO implements CarDAO {
@@ -57,6 +58,7 @@ public class JpaCarDAO implements CarDAO {
         }
     }
 
+
     @Override
     public Car GetCarById(int id) {
         try {
@@ -71,4 +73,6 @@ public class JpaCarDAO implements CarDAO {
         entityManager.close();
         entityManagerFactory.close();
     }
+
+
 }

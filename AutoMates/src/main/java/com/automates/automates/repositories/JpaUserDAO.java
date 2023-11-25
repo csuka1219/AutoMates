@@ -1,10 +1,8 @@
 package com.automates.automates.repositories;
 import com.automates.automates.Model.User;
 import com.automates.automates.interfaces.UserDAO;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.TypedQuery;
+
+import javax.persistence.*;
 
 public class JpaUserDAO implements UserDAO {
     private final EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("br.com.fredericci.pu");
@@ -50,5 +48,14 @@ public class JpaUserDAO implements UserDAO {
     public void close() throws Exception {
         entityManager.close();
         entityManagerFactory.close();
+    }
+
+    @Override
+    public int getMyClients(int userId) {
+        Query query = entityManager.createQuery(
+                "SELECT COUNT(DISTINCT l.renter.id) FROM User u JOIN Car c ON u.id = c.provider.id " +
+                        "JOIN Loan l ON c.id = l.car.id WHERE  u.id = :userId GROUP BY u.id", Long.class);
+        query.setParameter("userId", userId);
+        return ((Number) query.getSingleResult()).intValue();
     }
 }

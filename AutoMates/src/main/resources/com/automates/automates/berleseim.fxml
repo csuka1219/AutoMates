@@ -10,7 +10,8 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.automates.automates.MyLoansController">
     <children>
         <fx:include source="sidabar-view.fxml" fx:id="menubar" />
         <Text layoutX="158.0" layoutY="39.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Bérelt járműveim" wrappingWidth="262.4827880859375">
@@ -18,12 +19,12 @@
                 <Font size="23.0" />
             </font>
         </Text>
-        <TableView layoutX="158.0" layoutY="69.0" prefHeight="299.0" prefWidth="420.0">
+        <TableView fx:id="tableView" layoutX="158.0" layoutY="69.0" prefHeight="299.0" prefWidth="420.0">
             <columns>
-                <TableColumn prefWidth="95.20001220703125" text="Szolgáltató" />
-                <TableColumn prefWidth="82.4000244140625" text="Rendszám" />
-                <TableColumn prefWidth="119.20001220703125" text="Kezdet" />
-                <TableColumn prefWidth="120.79998779296875" text="Határidő" />
+                <TableColumn fx:id="providerColumn" prefWidth="95.20001220703125" text="Szolgáltató" />
+                <TableColumn fx:id="licensePlateColumn" prefWidth="82.4000244140625" text="Rendszám" />
+                <TableColumn fx:id="startDateColumn" prefWidth="119.20001220703125" text="Kezdet" />
+                <TableColumn fx:id="endDateColumn" prefWidth="120.79998779296875" text="Határidő" />
             </columns>
         </TableView>
     </children>

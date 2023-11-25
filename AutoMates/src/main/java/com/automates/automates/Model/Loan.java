@@ -17,6 +17,7 @@ public class Loan {
     private java.util.Date StartDate;
     private java.util.Date EndDate;
 
+
     public Car getCar() {
         return car;
     }
@@ -56,4 +57,16 @@ public class Loan {
     public void setEndDate(Date endDate) {
         EndDate = endDate;
     }
+
+
+
+
+    public Loan(User renter, Date startDate, Date endDate, Car car) {
+        this.renter = renter;
+        StartDate = startDate;
+        EndDate = endDate;
+        this.car = car;
+
+    }
+    public Loan (){}
 }

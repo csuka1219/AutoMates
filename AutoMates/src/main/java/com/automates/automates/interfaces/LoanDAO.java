@@ -9,4 +9,7 @@ public interface LoanDAO extends AutoCloseable{
     public void deleteLoan(Loan loan); //D
     public void updateLoan(Loan loan); //U
     public List<Loan> getLoans(); //R
+    public List<Loan> getRentedCars(int renterId);
+    public int getMyAllProceed(int userId);
+
 }

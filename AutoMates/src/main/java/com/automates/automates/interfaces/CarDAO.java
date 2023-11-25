@@ -1,7 +1,6 @@
 package com.automates.automates.interfaces;
 
 import com.automates.automates.Model.Car;
-import com.automates.automates.Model.User;
 
 import java.util.List;
 
@@ -13,5 +12,6 @@ public interface CarDAO extends AutoCloseable{
     public List<Car> getAvailableCars();
     public Car GetCarById(int id);
     public int getNumberOfCarsForUser(int userId);
+
 
 }
