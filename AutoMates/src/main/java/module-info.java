@@ -12,4 +12,5 @@ module com.automates.automates {
     opens com.automates.automates to javafx.fxml;
     opens com.automates.automates.Model;
     exports com.automates.automates;
+    exports com.automates.automates.component;
 }
