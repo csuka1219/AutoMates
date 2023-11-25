@@ -1,20 +1,10 @@
 package com.automates.automates;
 
-import com.automates.automates.Component.NumberTextField;
-import com.automates.automates.Data.UserData;
-import com.automates.automates.Model.Car;
-import com.automates.automates.Model.User;
 import com.automates.automates.interfaces.CarDAO;
-import com.automates.automates.interfaces.UserDAO;
 import com.automates.automates.repositories.JpaCarDAO;
-import com.automates.automates.repositories.JpaUserDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.BarChart;
-import javafx.scene.chart.XYChart;
-import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.VBox;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.scene.text.*;
