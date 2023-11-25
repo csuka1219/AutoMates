@@ -1,4 +1,4 @@
-package com.automates.automates.Component;
+package com.automates.automates.component;
 
 import javafx.scene.control.TextField;
 
