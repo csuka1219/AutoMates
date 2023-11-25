@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<?import com.automates.automates.component.NumberTextField?>
+<?import javafx.scene.control.Button?>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" fx:controller="com.automates.automates.MainPageController" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <fx:include source="sidabar-view.fxml" fx:id="menubar" />
+      <Text layoutX="158.0" layoutY="39.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="ELÉRHETŐ JÁRMŰVEK" wrappingWidth="262.4827880859375">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Text>
+      <NumberTextField fx:id="seatsField" layoutX="167.0" layoutY="71.0" prefHeight="25.0" prefWidth="49.0" text="" />
+      <ChoiceBox fx:id="Brand" layoutX="231.0" layoutY="71.0" prefHeight="25.0" prefWidth="98.0" />
+      <ChoiceBox fx:id="Model" layoutX="347.0" layoutY="71.0" prefHeight="25.0" prefWidth="98.0" />
+      <ChoiceBox fx:id="Color" layoutX="467.0" layoutY="71.0" prefHeight="25.0" prefWidth="64.0" />
+      <Label layoutX="167.0" layoutY="54.0" text="Férőhely" />
+      <Label layoutX="231.0" layoutY="54.0" text="Márka" />
+      <Label layoutX="347.0" layoutY="54.0" text="Model" />
+      <Label layoutX="467.0" layoutY="54.0" text="Szín" />
+      <CheckBox fx:id="isDiesel" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="545.0" layoutY="75.0" mnemonicParsing="false" />
+      <Text layoutX="545.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Diesel" />
+      <TableView fx:id="tableView" layoutX="167.0" layoutY="113.0" prefHeight="262.0" prefWidth="420.0">
+        <columns>
+          <TableColumn fx:id="ownerColumn" prefWidth="75.0" text="Szolgáltató" />
+          <TableColumn fx:id="licensePlateColumn" prefWidth="75.0" text="Rendszám" />
+            <TableColumn fx:id="rentalPriceColumn" prefWidth="75.0" text="Ár" />
+            <TableColumn fx:id="brandColumn" prefWidth="75.0" text="Férőhely" />
+            <TableColumn fx:id="othersColumn" prefWidth="118.39996337890625" text="Egyéb adatok" />
+        </columns>
+      </TableView>
+       <Button fx:id="searchButton" layoutX="530.0" layoutY="17.0" mnemonicParsing="false" text="Keresés" />
+       <Button fx:id="rentButton" layoutX="480.0" layoutY="17.0" mnemonicParsing="false" text="Bérlés" />
+   </children>
+</Pane>
