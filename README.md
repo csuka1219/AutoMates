@@ -33,19 +33,23 @@ A felületen szerepelnek szövegek, számbeviteli mezők, választó dobozok, je
 amelyben járműadatok jelennek meg. A felhasználó képes lehet járművek keresésére a különböző tulajdonságok alapján,<br />
 és a találatokat a táblázatban megtekintheti. Emellett két gomb is található a bérlés és a keresés funkciók aktiválására.<br />
 
+
 ![béreltkocsik_bérlő.png](./rendszerterv/béreltkocsik_bérlő.png)<br />
  A "Bérléseim" funkciót valósítja meg, amely egy táblázatban jeleníti meg a bérelt járművek tulajdonosát, rendszámát, a bérlés kezdetét és a végét.<br />
+
 
  ![Autoim_Szolgáltató.png](./rendszerterv/Autoim_Szolgáltató.png)<br />
  A felületen a bérbeadó felhasználó adatait jeleníti meg egy táblázatban, amelyben az autók adatai jelennek meg, márka,<br />
  rendszám, modell, szín, és a bérlés ára naponta. Két gomb is szerepel a felületen: az "Új Autó" gomb a hozzáadás funkciót szolgálja,<br />
  míg a "Kiválasztott szerkesztése" gomb a kiválasztott autó szerkesztését teszi lehetővé.
 
+
  ![statisztika.png](./rendszerterv/statisztika.png)<br />
  Autók száma: Azt mutatja, hány autóval rendelkezik a felhasználó.
  Összes bevétel: A felhasználó összes edigi bevétele forintban.
  Vásárlók száma: A felhasználónak hány bérlője volt eddig (az ismétlődőket nem számoljuk).
  A felület alsó részén található egy oszlopdiagram (BarChart), amely a napi bevételeket mutatja napok szerint kategorizálva.
+
 
  ![signup.png](./rendszerterv/signup.png)<br />
  ![login.png](./rendszerterv/login.png)<br />
