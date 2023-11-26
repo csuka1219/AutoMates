@@ -7,7 +7,6 @@ import com.automates.automates.repositories.JpaUserDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
@@ -46,7 +45,13 @@ public class SideBarController implements Initializable {
             }
         });
 
-        logoutButton.setOnAction(event -> logout());
+        logoutButton.setOnAction(event -> {
+            try {
+                logout();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
 
         User user = new User();
         try (UserDAO uDAO = new JpaUserDAO()) {
@@ -99,7 +104,12 @@ public class SideBarController implements Initializable {
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         stage.setScene(scene);
     }
-    private void logout(){
-        //later
+    private void logout() throws IOException {
+        UserData.setName("");
+        UserData.setId(0);
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("login.fxml"));
+        Stage stage = (Stage) logoutButton.getScene().getWindow();
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        stage.setScene(scene);
     }
 }

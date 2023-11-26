@@ -3,6 +3,7 @@ import com.automates.automates.Model.User;
 import com.automates.automates.interfaces.UserDAO;
 
 import javax.persistence.*;
+import java.util.List;
 
 public class JpaUserDAO implements UserDAO {
     private final EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("br.com.fredericci.pu");
@@ -29,12 +30,15 @@ public class JpaUserDAO implements UserDAO {
     }
 
     @Override
-    public boolean Login(User user) {
-        TypedQuery<User> currentUser = entityManager.createQuery(
+    public int Login(User user) {
+        TypedQuery<User> currentUserQuery = entityManager.createQuery(
                 "SELECT u FROM User u WHERE u.Username = :username AND u.Password = :password", User.class);
-        currentUser.setParameter("username", user.getUsername());
-        currentUser.setParameter("password", user.getPassword());
-        return !currentUser.getResultList().isEmpty();
+        currentUserQuery.setParameter("username", user.getUsername());
+        currentUserQuery.setParameter("password", user.getPassword());
+        List<User> currentUserList = currentUserQuery.getResultList();
+        if (currentUserList.isEmpty())
+            return 0;
+        return currentUserList.get(0).getId();
     }
 
     public boolean IsUsernameAlreadyExist(String username){
