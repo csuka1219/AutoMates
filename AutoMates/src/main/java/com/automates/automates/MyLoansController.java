@@ -55,7 +55,7 @@ public class MyLoansController implements Initializable {
         //licensePlateColumn.setCellValueFactory(new PropertyValueFactory<Loan, String>("car"));
         startDateColumn.setCellValueFactory(new PropertyValueFactory<Loan, Date>("startDate"));
         endDateColumn.setCellValueFactory(new PropertyValueFactory<Loan, Date>("endDate"));
-        providerColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getRenter().getUsername()));
+        providerColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getCar().getProvider().getUsername()));
         licensePlateColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getCar().getLicensePlate()));
     }
 

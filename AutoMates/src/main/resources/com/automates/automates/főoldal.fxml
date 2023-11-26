@@ -42,7 +42,7 @@
           <TableColumn fx:id="ownerColumn" prefWidth="75.0" text="Szolgáltató" />
           <TableColumn fx:id="licensePlateColumn" prefWidth="75.0" text="Rendszám" />
             <TableColumn fx:id="rentalPriceColumn" prefWidth="75.0" text="Ár" />
-            <TableColumn fx:id="brandColumn" prefWidth="75.0" text="Férőhely" />
+            <TableColumn fx:id="brandColumn" prefWidth="75.0" text="Márka" />
             <TableColumn fx:id="othersColumn" prefWidth="118.39996337890625" text="Egyéb adatok" />
         </columns>
       </TableView>

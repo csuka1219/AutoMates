@@ -87,7 +87,7 @@ public class MainPageController implements Initializable {
         licensePlateColumn.setCellValueFactory(new PropertyValueFactory<Car,String>("LicensePlate"));
         brandColumn.setCellValueFactory(new PropertyValueFactory<Car,String>("Brand"));
         rentalPriceColumn.setCellValueFactory(new PropertyValueFactory<Car,Double>("PricePerDay"));
-        othersColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getColor().concat(" ,")
+        othersColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getColor().concat(", ")
                 .concat(cellData.getValue().getModel())));
     }
 
