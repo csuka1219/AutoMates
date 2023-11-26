@@ -4,6 +4,7 @@
 - [☝️ Általános információ](#️-általános-információ)
 - [📝 Az adatbázis felépítése](#-az-adatbázis-felépítése)
 - [📝 Written in](#-written-in)
+- [📝 Főbb oldalak](#-főbb-oldalak)
 - [⭐️ Kapcsolat](#️-kapcsolat)
 
 
@@ -22,5 +23,32 @@ Az adatbázis felépítése részletesebben [itt](https://dbdiagram.io/d/652e9ed
 ## 📝 Written in
 Java with Maven.
 
+
+## 📝 Főbb oldalak
+![fooldal.png](./rendszerterv/fooldal.png)
+A felületen szerepelnek szövegek, számbeviteli mezők, választó dobozok, jelölőnégyzetek, valamint egy táblázat,<br />
+amelyben járműadatok jelennek meg. A felhasználó képes lehet járművek keresésére a különböző tulajdonságok alapján,<br />
+és a találatokat a táblázatban megtekintheti. Emellett két gomb is található a bérlés és a keresés funkciók aktiválására.<br />
+
+![béreltkocsik_bérlő.png](./rendszerterv/béreltkocsik_bérlő.png)
+ A "Bérléseim" funkciót valósítja meg, amely egy táblázatban jeleníti meg a bérelt járművek tulajdonosát, rendszámát, a bérlés kezdetét és a végét.<br />
+
+ ![Autoim_Szolgáltató.png](./rendszerterv/Autoim_Szolgáltató.png)
+ A felületen a bérbeadó felhasználó adatait jeleníti meg egy táblázatban, amelyben az autók adatai jelennek meg, márka,<br />
+ rendszám, modell, szín, és a bérlés ára naponta. Két gomb is szerepel a felületen: az "Új Autó" gomb a hozzáadás funkciót szolgálja,<br />
+ míg a "Kiválasztott szerkesztése" gomb a kiválasztott autó szerkesztését teszi lehetővé.
+
+ ![statisztika.png](./rendszerterv/statisztika.png)
+ Autók száma: Azt mutatja, hány autóval rendelkezik a felhasználó.
+ Összes bevétel: A felhasználó összes edigi bevétele forintban.
+ Vásárlók száma: A felhasználónak hány bérlője volt eddig(az ismétlődőket nem számoljuk).
+ A felület alsó részén található egy oszlopdiagram (BarChart), amely a napi bevételeket mutatja napok szerint kategorizálva.
+
+ ![signup.png](./rendszerterv/signup.png)
+ ![login.png](./rendszerterv/login.png)
+ És legvégül két átlagos oldal, egy a bejelentkezésre, egy pedig a regisztrációra.<br />
+ Ami viszont lényeges hogy itt válik el hogy valaki bérlő vagy bérbeadó akar lenni, később nics lehetőség változtatni(egyelőre).
+
+
 ## ⭐️ Kapcsolat
-Készítették: [@csuka1219](https://github.com/csuka1219), [@BOXi-Mark](https://github.com/BOXi-Mark), [@SmBird027]([https://github.com/czegenypatrik](https://github.com/SmBird027)) és [@Markol0](https://github.com/Markol0)<br>
+Készítették: [@csuka1219](https://github.com/csuka1219), [@BOXi-Mark](https://github.com/BOXi-Mark), [@SmBird027](https://github.com/SmBird027) és [@Markol0](https://github.com/Markol0)<br>
