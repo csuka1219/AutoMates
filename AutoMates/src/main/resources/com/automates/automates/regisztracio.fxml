@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" fx:controller="com.automates.automates.RegisterController" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text layoutX="177.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AUTOMATES" textAlignment="CENTER">
+         <font>
+            <Font size="43.0" />
+         </font>
+      </Text>
+      <TextField fx:id="usernameField" layoutX="226.0" layoutY="126.0" />
+      <Label layoutX="226.0" layoutY="103.0" text="Felhasználónév" />
+      <Label layoutX="226.0" layoutY="164.0" text="Jelszó" />
+      <Text layoutX="260.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Regisztráció">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <PasswordField fx:id="passwordField" layoutX="225.0" layoutY="188.0" />
+      <Label layoutX="227.0" layoutY="228.0" text="Jelszó ismét" />
+      <PasswordField fx:id="passwordAgainField" layoutX="225.0" layoutY="253.0" />
+      <CheckBox fx:id="isProviderCheckBox" layoutX="224.0" layoutY="293.0" mnemonicParsing="false" text="tulajdonosként regisztrálok" />
+      <Button fx:id="registButton" layoutX="256.0" layoutY="327.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="87.0" text="Regisztráció" />
+      <Button fx:id="loginButton" layoutX="491.0" layoutY="361.0" mnemonicParsing="false" text="Bejelentkezés" />
+
+   </children>
+</Pane>
