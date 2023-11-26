@@ -31,7 +31,7 @@ Java with Maven.
 ![fooldal.png](./rendszerterv/fooldal.png)<br />
 A felületen szerepelnek szövegek, számbeviteli mezők, választó dobozok, jelölőnégyzetek, valamint egy táblázat,<br />
 amelyben járműadatok jelennek meg. A felhasználó képes lehet járművek keresésére a különböző tulajdonságok alapján,<br />
-és a találatokat a táblázatban megtekintheti. Emellett két gomb is található a bérlés és a keresés funkciók aktiválására.<br />
+és a találatokat a táblázatban megtekintheti. Emellett két gomb is található a bérlés és a keresés funkciók aktiválására.<br /><br /><br />
 
 
 ![béreltkocsik_bérlő.png](./rendszerterv/béreltkocsik_bérlő.png)<br />
