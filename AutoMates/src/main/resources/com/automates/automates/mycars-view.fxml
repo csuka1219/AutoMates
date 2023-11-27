@@ -24,6 +24,7 @@
                 <TableColumn fx:id="rentalPriceColumn" prefWidth="135.20001220703125" text="Bérlés Ára/nap" />
             </columns>
         </TableView>
+        <Button fx:id="deleteCarButton" layoutX="324.0" layoutY="17.0" mnemonicParsing="false" text="Törlés" />
         <Button fx:id="newCarButton" layoutX="384.0" layoutY="17.0" mnemonicParsing="false" text="Új Autó" />
         <Button fx:id="editCarButton" layoutX="444.0" layoutY="17.0" mnemonicParsing="false" text="Kiválasztott szerkeszése" />
     </children>

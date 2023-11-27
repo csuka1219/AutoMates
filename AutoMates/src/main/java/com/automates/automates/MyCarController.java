@@ -40,6 +40,8 @@ public class MyCarController implements Initializable {
 
     @FXML
     private Button editCarButton;
+    @FXML
+    private Button deleteCarButton;
 
 
 
@@ -47,6 +49,7 @@ public class MyCarController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         newCarButton.setOnAction(event -> handleNewCarButton());
         editCarButton.setOnAction(event -> handleEditCarButton());
+        deleteCarButton.setOnAction(event -> handleDeleteCarButton());
 
         configureTableColumns();
 
@@ -55,6 +58,20 @@ public class MyCarController implements Initializable {
             tableView.getItems().addAll(cDAO.getCarsByProviderId(UserData.getId()));
         } catch (Exception e) {
             System.out.println("Hiba a táblázat feltöltése közben.");
+        }
+    }
+
+    private void handleDeleteCarButton() {
+        Car deletableCar = tableView.getSelectionModel().getSelectedItem();
+        if(deletableCar != null){
+            try (CarDAO cDAO = new JpaCarDAO();) {
+                deletableCar = cDAO.GetCarById(deletableCar.getId());
+                cDAO.deleteCar(deletableCar);
+                tableView.getItems().remove(tableView.getSelectionModel().getSelectedItem());
+                tableView.refresh();
+            } catch (Exception e) {
+                System.out.println("Hiba a törlés közben.");
+            }
         }
     }
 
