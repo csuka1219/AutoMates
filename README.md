@@ -28,6 +28,12 @@ Java with Maven.
 
 
 ## 📝 Főbb oldalak
+ ![signup.png](./rendszerterv/signup.png)<br />
+ ![login.png](./rendszerterv/login.png)<br />
+ És legvégül két átlagos oldal, egy a bejelentkezésre, egy pedig a regisztrációra.<br />
+ Ami viszont lényeges hogy itt válik el hogy valaki bérlő vagy bérbeadó akar lenni, később nincs lehetőség változtatni.<br /><br /><br />
+
+ 
 ![fooldal.png](./rendszerterv/főoldal_bérlő.png)<br />
 A felületen szerepelnek szövegek, számbeviteli mezők, választó dobozok, jelölőnégyzetek, valamint egy táblázat,<br />
 amelyben járműadatok jelennek meg. A felhasználó képes lehet járművek keresésére a különböző tulajdonságok alapján,<br />
@@ -48,10 +54,6 @@ amelyben járműadatok jelennek meg. A felhasználó képes lehet járművek ker
  Vásárlók száma: A felhasználónak hány bérlője volt eddig (az ismétlődőket nem számoljuk).
  A felület alsó részén található egy oszlopdiagram (BarChart), amely a napi bevételeket mutatja napok szerint kategorizálva.<br /><br /><br />
 
- ![signup.png](./rendszerterv/signup.png)<br />
- ![login.png](./rendszerterv/login.png)<br />
- És legvégül két átlagos oldal, egy a bejelentkezésre, egy pedig a regisztrációra.<br />
- Ami viszont lényeges hogy itt válik el hogy valaki bérlő vagy bérbeadó akar lenni, később nincs lehetőség változtatni (egyelőre).
 
 
 ## ⭐️ Kapcsolat
