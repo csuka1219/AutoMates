@@ -30,7 +30,7 @@ Java with Maven.
 ## 📝 Főbb oldalak
  ![signup.png](./rendszerterv/signup.png)<br />
  ![login.png](./rendszerterv/login.png)<br />
- És legvégül két átlagos oldal, egy a bejelentkezésre, egy pedig a regisztrációra.<br />
+ Ez két átlagos oldal, egy a bejelentkezésre, egy pedig a regisztrációra.<br />
  Ami viszont lényeges hogy itt válik el hogy valaki bérlő vagy bérbeadó akar lenni, később nincs lehetőség változtatni.<br /><br /><br />
 
  
