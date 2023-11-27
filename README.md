@@ -28,7 +28,7 @@ Java with Maven.
 
 
 ## 📝 Főbb oldalak
-![fooldal.png](./rendszerterv/fooldal.png)<br />
+![fooldal.png](./rendszerterv/főoldal_bérlő.png)<br />
 A felületen szerepelnek szövegek, számbeviteli mezők, választó dobozok, jelölőnégyzetek, valamint egy táblázat,<br />
 amelyben járműadatok jelennek meg. A felhasználó képes lehet járművek keresésére a különböző tulajdonságok alapján,<br />
 és a találatokat a táblázatban megtekintheti. Emellett két gomb is található a bérlés és a keresés funkciók aktiválására.<br /><br /><br />
@@ -42,7 +42,7 @@ amelyben járműadatok jelennek meg. A felhasználó képes lehet járművek ker
  rendszám, modell, szín, és a bérlés ára naponta. Két gomb is szerepel a felületen: az "Új Autó" gomb a hozzáadás funkciót szolgálja,<br />
  míg a "Kiválasztott szerkesztése" gomb a kiválasztott autó szerkesztését teszi lehetővé.<br /><br /><br />
 
- ![statisztika.png](./rendszerterv/statisztika.png)<br />
+ ![statisztika.png](./rendszerterv/statisztikák_Szolgáltató.png)<br />
  Autók száma: Azt mutatja, hány autóval rendelkezik a felhasználó.
  Összes bevétel: A felhasználó összes edigi bevétele forintban.
  Vásárlók száma: A felhasználónak hány bérlője volt eddig (az ismétlődőket nem számoljuk).
@@ -51,7 +51,7 @@ amelyben járműadatok jelennek meg. A felhasználó képes lehet járművek ker
  ![signup.png](./rendszerterv/signup.png)<br />
  ![login.png](./rendszerterv/login.png)<br />
  És legvégül két átlagos oldal, egy a bejelentkezésre, egy pedig a regisztrációra.<br />
- Ami viszont lényeges hogy itt válik el hogy valaki bérlő vagy bérbeadó akar lenni, később nics lehetőség változtatni (egyelőre).
+ Ami viszont lényeges hogy itt válik el hogy valaki bérlő vagy bérbeadó akar lenni, később nincs lehetőség változtatni (egyelőre).
 
 
 ## ⭐️ Kapcsolat
