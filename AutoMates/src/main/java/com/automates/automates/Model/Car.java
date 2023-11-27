@@ -1,10 +1,7 @@
 package com.automates.automates.Model;
 
-import com.automates.automates.repositories.JpaCarDAO;
-
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
 
 @Entity
 public class Car implements Serializable {
